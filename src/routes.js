@@ -9,7 +9,9 @@ const upload = multer(uploadConfig)
 
 routes.post('/sessions', SessionController.store)
 
+// upload.single => cause I want just one, if I wanted many: upload.array()
 routes.post('/houses', upload.single('thumbnail'), HouseController.store)
 routes.get('/houses', HouseController.index)
+routes.put('/houses/:house_id', upload.single('thumbnail'), HouseController.update)
 
 export default routes
