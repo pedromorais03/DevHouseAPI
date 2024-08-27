@@ -12,7 +12,9 @@ import User from '../models/User'
 
 class SessionController{
   async store(req, res){
-    const { email } = req.body.email
+    console.log(req.body.email)
+    const { email } = req.body
+    console.log(`Email: ${email}`)
 
     // Verifying if user already exists
     let user = await User.findOne({ email })
