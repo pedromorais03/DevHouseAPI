@@ -66,7 +66,7 @@ class HouseController{
 
     await House.findByIdAndDelete({ _id: house_id })
 
-    return res.json({ message: "House deleted" })
+    return res.json({ message: "Deletion completed" })
   } 
 }
 
